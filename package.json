@@ -1,7 +1,7 @@
 {
 	"name": "vscode-gerrit-helper",
-	"displayName": "Gerrit Helper,Gerrit Push",
-	"description": "Gerrit Push,and Helper",
+	"displayName": "Gerrit Push Helper",
+	"description": "Gerrit Push,and Helper,推送当前分支到Gerrit的同名分支中以便评审。以及其他特定功能",
 	"version": "0.0.1",
 	"publisher": "Heartacker",
 	"author": {
@@ -13,7 +13,7 @@
 	"readme": "README.md",
 	"preview": true,
 	"engines": {
-		"vscode": "^1.58.0"
+		"vscode": "^1.50.0"
 	},
 	"bugs": {
 		"url": "https://github.com/heartacker/vscode-gerrit-helper/issues",
@@ -47,19 +47,31 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "Gerrit.Helper.commands",
-				"title": "git push to the gerrit for review"
+				"command": "Gerrit.Helper.HelperCommands",
+				"title": "其他有用的 Gerrit 帮助命令",
+				"shorttitle": "Gerrit.Helper.HelperCommands"
+			},
+			{
+				"command": "Gerrit.Helper.acommit",
+				"title": "规范 Git 的提交信息 (acommit)",
+				"shorttitle": "Gerrit.Helper.acommit"
 			},
 			{
 				"command": "Gerrit.Helper.push",
-				"title": "Gerrit.Helper.push 推送到 Gerrit"
-			},
-			{
-				"command": "Gerrit.Helper.pushg",
-				"title": "Gerrit.Helper.pushg, 推送到 Gerrit",
+				"title": "选择指定分支并推送到 Gerrit(push)",
+				"shorttitle": "Gerrit.Helper.push",
 				"icon": {
 					"dark": "images/gerrit-helper-dark.svg",
 					"light": "images/gerrit-helper-light.svg"
+				}
+			},
+			{
+				"command": "Gerrit.Helper.pushg",
+				"title": "推送当前分支到 Gerrit(pushg)",
+				"shortTitle": "Gerrit.Helper.pushg",
+				"icon": {
+					"dark": "images/gerrit-helper-pushg-dark.svg",
+					"light": "images/gerrit-helper-pushg-light.svg"
 				}
 			}
 		],
@@ -69,6 +81,21 @@
 					"when": "scmProvider == git",
 					"command": "Gerrit.Helper.pushg",
 					"group": "navigation"
+				},
+				{
+					"when": "scmProvider == git",
+					"command": "Gerrit.Helper.push",
+					"group": "3_footer"
+				},
+				{
+					"when": "scmProvider == git",
+					"command": "Gerrit.Helper.acommit",
+					"group": "3_footer"
+				},
+				{
+					"when": "scmProvider == git",
+					"command": "Gerrit.Helper.HelperCommands",
+					"group": "3_footer"
 				}
 			]
 		}
@@ -82,7 +109,7 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.58.0",
+		"@types/vscode": "^1.50.0",
 		"@types/glob": "^7.1.3",
 		"@types/mocha": "^8.2.2",
 		"@types/node": "14.x",

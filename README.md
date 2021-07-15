@@ -1,6 +1,6 @@
 # GerritHelper
 
-This is the README for your extension "GerritHelper". 
+GerritHelper
 
 ## Features
 

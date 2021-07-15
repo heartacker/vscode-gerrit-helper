@@ -1,0 +1,31 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="161px" height="192px" viewBox="-0.5 -0.5 161 192" content="&lt;mxfile&gt;&lt;diagram id=&quot;Mdmxesuolw45kxad0qVm&quot; name=&quot;第 1 页&quot;&gt;rZRNb5wwEIZ/DdfKGBbYY9gm20ty6Fbq2cETsOIP5PUGtr++YzABlkRKpV6Q/czYHs/7mig5qP5oWds8Gg4yooT3UfI9opRmKX49uI5gV5AR1FbwEcUzOIk/EOCUdhEczqtEZ4x0ol3DymgNlVsxZq3p1mkvRq5PbVkNG3CqmNzS34K7JlyLkJn/AFE37ibwzKrX2pqLDsdpo2GMKDbtElLPDeOmW6DkPkoO1hg3jlR/AOmbOjVsXPfwSfS9YgvafWUBzccVb0xewq2PoTJ3nfrgoMfNysYpiSDG4dlZ8woHI41FMtwvKV+ElDeISVFrnFZYDiAv38A6gR2+CwElOPfHlF0jHJxaVvkzO7QTsqGF4CslfnujXfBInE3ggSkhvb1+CYVWoeQJOvz+NIrh9uW2HaFDvg7oFyi05whGgbNXTJlcHJQKHk7CtJsN4asZWLMwQ5wGyIIJ6/edZzlwEBT5RJ1io85GHHRQ64dnoWsJd972eHEuLL4IYfSghfWlftjihabL/u58f4cnNBmffKMFSXd7SooipzHN91NGWIMJKSXZnpA8izGT7m8sEdGE76Dg6cY/GCnoc5Jl/0exfK1YvlXsQ8HIvwuG0/mpDrHFjzC5/ws=&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <rect x="0" y="26" width="160" height="140" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 158px; height: 1px; padding-top: 96px; margin-left: 1px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+                            <div style="display: inline-block; font-size: 160px; font-family: Times New Roman; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                G
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="80" y="144" fill="#000000" font-family="Times New Roman" font-size="160px" text-anchor="middle">
+                    G
+                </text>
+            </switch>
+        </g>
+        <path d="M 30 107.59 L 105.79 107.59 L 105.79 86 L 130 116 L 105.79 146 L 105.79 124.41 L 30 124.41 Z" fill="#d5e8d4" stroke="#82b366" stroke-miterlimit="10" transform="rotate(270,80,116)" pointer-events="all"/>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Viewer does not support full SVG 1.1
+            </text>
+        </a>
+    </switch>
+</svg>
