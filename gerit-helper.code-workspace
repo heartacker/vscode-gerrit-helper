@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "gerrit-push",
+			"path": "..\\gerrit-push"
+		},
+		{
+			"name": "git-emoji-zh",
+			"path": "..\\git-emoji-zh"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off"
+	}
+}

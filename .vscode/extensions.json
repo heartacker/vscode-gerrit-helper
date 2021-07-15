@@ -1,0 +1,16 @@
+{
+	// See http://go.microsoft.com/fwlink/?LinkId=827846
+	// for the documentation about the extensions.json format
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"ms-devlabs.extension-manifest-editor",
+		"nick-rudenko.back-n-forth",
+		"yzhang.dictionary-completion",
+		"mhutchie.git-graph",
+		"eamodio.gitlens",
+		"kisstkondoros.vscode-gutter-preview",
+		"shd101wyy.markdown-preview-enhanced",
+		"ryu1kn.text-marker",
+		"eg2.vscode-npm-script"
+	]
+}

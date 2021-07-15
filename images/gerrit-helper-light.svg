@@ -1,0 +1,29 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="596px" height="596px" viewBox="-0.5 -0.5 596 596" content="&lt;mxfile&gt;&lt;diagram id=&quot;Mdmxesuolw45kxad0qVm&quot; name=&quot;第 1 页&quot;&gt;zZdvr5owFMY/jW9NaQXhpXrh7sWWLDHZXleo0AiUlDpxn36nUBCEO7dM4ryJ0ue058Dz6x/uguyy6l3SIvkiIpYuMIqqBXlbYOxhBN9auDaC7RghljxqJOsm7PlPZsS225lHrBx0VEKkihdDMRR5zkI10KiU4jLsdhTpsGpBYzYS9iFNx+p3HqmkUTFCN/0T43Gi7gIHGp5iKc65KZeLnDWRjLZZTNcyoZG49CTiL8hOCqGaq6zasVSb2hrWjAs+iHZ3LFmu/miAGfGDpmfz1ObG1LW1AUaA49DYXhKu2L6goY5cgDloicpSaFlwScuiwXDkFYMC21JJceq8sxyQjjxNdyIVEoTaF5Ag/TeTohnRdlhgstroP4iMn6y9dSYVq3qSedJ3JjKm5BW6VMN5dR02Lze2tmu0pMe1E6mZT3GX+eYsXBhzp43Gj31+4G49obSt00YdXHtlI4jEkkYcTHrjEmhwketsrFRjHnc4IEng+mt/XRdT1IzVOakMzfIkuFeiP7L+PIfTesjJHXMia3fMiTyD02puTi4+EMf5gBOjE5zImJO/CQLfG4Kx5gdj2WS4glYTaJz1TGjsx2h6GLqdVc/fiJZJjaSezCmPtdkhGMHApa02gMO2vzGBjEeRzqhzFDpzVsX6gFs2hwpufnVa7QNaapr1obeqa/V45kJqX7a5UGFiyk/Nj9+gRsjzEJqfbbekDFtij9l6eIzWwk9A6z5G20L6TA8s/SpKbiw+CKVENkFRibuFeU/zQEseLmHM6X+mcndmeWMqljVxaHXiv2DxXoel+nsmQeA4g511JiYYeQMm3XtfnwmaYoKewKTl+gooYBuYmod+90ZYKpA2eVxXRkvYo8mW5dFNsZpDqsWGlvYLwVl3W9x6RnDQvL3G17HeP0nE/wU=&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs>
+        <linearGradient x1="100%" y1="0%" x2="0%" y2="0%" id="mx-gradient-ffffff-1-f8e7e7-1-e-0">
+            <stop offset="0%" style="stop-color:#F8E7E7"/>
+            <stop offset="100%" style="stop-color:#FFFFFF"/>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" id="mx-gradient-eaffe9-1-ffffff-1-e-0">
+            <stop offset="0%" style="stop-color:#EAFFE9"/>
+            <stop offset="100%" style="stop-color:#FFFFFF"/>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="mx-gradient-009900-1-ffffff-1-s-0">
+            <stop offset="0%" style="stop-color:#009900"/>
+            <stop offset="100%" style="stop-color:#FFFFFF"/>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="mx-gradient-ff6666-1-ffffff-1-s-0">
+            <stop offset="0%" style="stop-color:#FF6666"/>
+            <stop offset="100%" style="stop-color:#FFFFFF"/>
+        </linearGradient>
+    </defs>
+    <g>
+        <ellipse cx="298" cy="298" rx="290" ry="290" fill="none" stroke="#4a4a4a" stroke-width="16" transform="translate(0,298)scale(1,-1)translate(0,-298)" pointer-events="all"/>
+        <rect x="68" y="78" width="378" height="380" rx="120.96" ry="120.96" fill="url(#mx-gradient-ffffff-1-f8e7e7-1-e-0)" stroke="#b85450" pointer-events="all"/>
+        <rect x="151" y="138" width="367" height="380" rx="113.77" ry="113.77" fill="url(#mx-gradient-eaffe9-1-ffffff-1-e-0)" stroke="#82b366" stroke-width="3" pointer-events="all"/>
+        <path d="M 362 389.6 L 442 389.6 L 442 362 L 482 408 L 442 454 L 442 426.4 L 362 426.4 L 362 408 Z" fill="url(#mx-gradient-009900-1-ffffff-1-s-0)" stroke="#000000" stroke-width="3" stroke-miterlimit="10" transform="rotate(270,422,408)" pointer-events="all"/>
+        <path d="M 368.47 263.21 C 369.64 259.49 372.58 256.39 376.56 254.66 C 380.54 252.94 385.19 252.77 389.32 254.19 C 395.35 256.72 400.01 261.16 402.36 266.59 C 413.11 240.15 429.46 215.67 450.58 194.42 C 456.57 189.71 464.94 188 472.73 189.91 C 474.72 190.18 476.41 191.32 477.21 192.92 C 478 194.52 477.79 196.36 476.64 197.8 C 447.94 225.84 426.6 258.93 414.09 294.79 C 406.71 298 398 298 390.63 294.79 C 385.05 284.07 377.57 274.18 368.47 265.46 C 368 264.77 368 263.91 368.47 263.21 Z" fill="url(#mx-gradient-009900-1-ffffff-1-s-0)" stroke="#000000" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 207 198 L 236.17 198 L 257 227.59 L 277.83 198 L 307 198 L 271.58 248 L 307 298 L 277.83 298 L 257 268.41 L 236.17 298 L 207 298 L 240.33 248 Z" fill="url(#mx-gradient-ff6666-1-ffffff-1-s-0)" stroke="#000000" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 316 418 C 316 441.12 300.15 461.22 277.67 466.62 C 255.19 472.02 231.95 461.3 221.45 440.7 C 210.95 420.1 215.95 394.99 233.53 379.98 C 251.11 364.97 276.69 363.96 295.39 377.55 L 280.69 397.77 C 271.34 390.98 258.55 391.48 249.76 398.99 C 240.97 406.5 238.48 419.05 243.72 429.35 C 248.97 439.65 260.6 445.01 271.84 442.31 C 283.08 439.61 291 429.56 291 418 Z" fill="url(#mx-gradient-ff6666-1-ffffff-1-s-0)" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    </g>
+</svg>

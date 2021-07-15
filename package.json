@@ -1,0 +1,97 @@
+{
+	"name": "vscode-gerrit-helper",
+	"displayName": "Gerrit Helper,Gerrit Push",
+	"description": "Gerrit Push,and Helper",
+	"version": "0.0.1",
+	"publisher": "Heartacker",
+	"author": {
+		"name": "heartacker",
+		"email": "heartacker@outlook.com",
+		"url": "https://www.github.com/heartacker"
+	},
+	"icon": "heartacker.vscode.gerrit.helper.icons.png",
+	"readme": "README.md",
+	"preview": true,
+	"engines": {
+		"vscode": "^1.58.0"
+	},
+	"bugs": {
+		"url": "https://github.com/heartacker/vscode-gerrit-helper/issues",
+		"email": "heartacker@outlook.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/heartacker/vscode-gerrit-helper.git"
+	},
+	"homepage": "https://github.com/heartacker/vscode-gerrit-helper",
+	"qna": "https://github.com/heartacker/vscode-gerrit-helper/issues",
+	"keywords": [
+		"push",
+		"pushg",
+		"git",
+		"gerrit",
+		"review",
+		"code review",
+		"helper"
+	],
+	"categories": [
+		"Visualization",
+		"Other",
+		"SCM Providers"
+	],
+	"activationEvents": [
+		"onCommand:Gerrit.Helper.pushg",
+		"onCommand:Gerrit.Helper.push"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "Gerrit.Helper.commands",
+				"title": "git push to the gerrit for review"
+			},
+			{
+				"command": "Gerrit.Helper.push",
+				"title": "Gerrit.Helper.push 推送到 Gerrit"
+			},
+			{
+				"command": "Gerrit.Helper.pushg",
+				"title": "Gerrit.Helper.pushg, 推送到 Gerrit",
+				"icon": {
+					"dark": "images/gerrit-helper-dark.svg",
+					"light": "images/gerrit-helper-light.svg"
+				}
+			}
+		],
+		"menus": {
+			"scm/title": [
+				{
+					"when": "scmProvider == git",
+					"command": "Gerrit.Helper.pushg",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.58.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "14.x",
+		"eslint": "^7.27.0",
+		"@typescript-eslint/eslint-plugin": "^4.26.0",
+		"@typescript-eslint/parser": "^4.26.0",
+		"glob": "^7.1.7",
+		"mocha": "^8.4.0",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.5.2"
+	}
+}
