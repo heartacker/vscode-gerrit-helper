@@ -11,6 +11,19 @@
 			"presentation": {
 				"reveal": "never"
 			},
+		},
+		{
+			"type": "shell",
+			"label": "Publish package",
+			"command": "vsce",
+			"args": [
+				"package"
+			],
+			"problemMatcher": "$tsc-watch",
+			"isBackground": true,
+			"presentation": {
+				"reveal": "never"
+			},
 			"group": {
 				"kind": "build",
 				"isDefault": true
