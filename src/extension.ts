@@ -12,7 +12,7 @@ async function pushCommit(repo: Repository, remoteName: string, branchName: stri
 
 	const w = vscode.window.createQuickPick();
 	w.canSelectMany = false;
-	w.title = `确定推送分支[${remoteName}]到 \'HEAD:ref/for/refs/heads/${branchName}\'`;
+	w.title = `确定推送分支[${branchName}]到 ${remoteName}: \'HEAD:ref/for/refs/heads/${branchName}\'`;
 	w.placeholder = "Yes";
 	w.items = [
 		{ label: "Yes" },
@@ -20,6 +20,7 @@ async function pushCommit(repo: Repository, remoteName: string, branchName: stri
 	];
 	w.onDidAccept(async () => {
 		const selection = w.activeItems[0];
+		w.hide();
 		if (selection.label === "Yes") {
 			console.log(`git push ${remoteName}  HEAD:refs/heads/${branchName}`);
 			// await repo.push(`${remoteName}`, `HEAD:ref/for/refs/heads/${branchName}`)
@@ -31,7 +32,6 @@ async function pushCommit(repo: Repository, remoteName: string, branchName: stri
 		} else {
 			console.log("user Cancelled");
 		}
-		w.hide();
 	});
 
 	w.onDidHide(() => w.dispose());
