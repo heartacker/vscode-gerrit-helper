@@ -2,7 +2,7 @@
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push Helper",
 	"description": "Gerrit Push,and Helper,推送当前分支到Gerrit的同名分支中以便评审。以及其他特定功能",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -57,15 +57,6 @@
 				"shorttitle": "Gerrit.Helper.acommit"
 			},
 			{
-				"command": "Gerrit.Helper.push",
-				"title": "选择指定分支并推送到 Gerrit(push)",
-				"shorttitle": "Gerrit.Helper.push",
-				"icon": {
-					"dark": "images/gerrit-helper-dark.svg",
-					"light": "images/gerrit-helper-light.svg"
-				}
-			},
-			{
 				"command": "Gerrit.Helper.pushg",
 				"title": "推送当前分支到 Gerrit(pushg)",
 				"shortTitle": "Gerrit.Helper.pushg",
@@ -84,11 +75,6 @@
 				},
 				{
 					"when": "scmProvider == git",
-					"command": "Gerrit.Helper.push",
-					"group": "3_footer"
-				},
-				{
-					"when": "scmProvider == git",
 					"command": "Gerrit.Helper.acommit",
 					"group": "3_footer"
 				},
@@ -98,7 +84,70 @@
 					"group": "3_footer"
 				}
 			]
-		}
+		},
+		"keybindings": [
+			{
+				"command": "Gerrit.Helper.pushg",
+				"key": "ctrl+shift+g ctrl+p",
+				"mac": "cmd+shift+g cmd+p"
+			},
+			{
+				"command": "Gerrit.Helper.acommit",
+				"key": "ctrl+shift+enter",
+				"mac": "cmd+shift+enter",
+				"when": "commentEditorFocused"
+			},
+			{
+				"key": "ctrl+shift+oem_3",
+				"command": "workbench.action.terminal.newWithProfile",
+				"when": "terminalProcessSupported"
+			},
+			{
+				"key": "ctrl+shift+oem_3",
+				"command": "-workbench.action.terminal.new",
+				"when": "terminalProcessSupported"
+			},
+			{
+				"key": "ctrl+shift+alt+j",
+				"command": "workbench.action.toggleMaximizedPanel"
+			},
+			{
+				"key": "ctrl+alt+j",
+				"command": "editor.action.insertSnippet"
+			},
+			{
+				"key": "ctrl+win+oem_plus",
+				"command": "workbench.action.minimizeOtherEditors",
+				"comment": "ctrl+win++"
+			},
+			{
+				"key": "ctrl+win+oem_minus",
+				"command": "workbench.action.evenEditorWidths",
+				"comment": "ctrl+win+-"
+			},
+			{
+				"key": "ctrl+alt+f5",
+				"command": "workbench.action.debug.selectandstart"
+			},
+			{
+				"key": "shift+alt+t",
+				"command": "workbench.action.tasks.runTask"
+			},
+			{
+				"key": "alt+f8",
+				"command": "textmarker.toggleHighlight",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "f1",
+				"command": "workbench.action.navigateBack"
+			},
+			{
+				"key": "ctrl+shift+j",
+				"command": "workbench.action.terminal.toggleTerminal",
+				"when": "!inSearchEditor && !searchViewletFocus"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

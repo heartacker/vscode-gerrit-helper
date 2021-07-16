@@ -6,8 +6,42 @@ import * as vscode from 'vscode';
 import { API } from "./api/git";
 import { Git, GitExtension, Repository } from "./api/git";
 
+
+// 弹窗确定进行Commit
+async function pushCommit(repo: Repository, remoteName: string, branchName: string) {
+
+	const w = vscode.window.createQuickPick();
+	w.canSelectMany = false;
+	w.title = `确定推送分支[${remoteName}]到 \'HEAD:ref/for/refs/heads/${branchName}\'`;
+	w.placeholder = "Yes";
+	w.items = [
+		{ label: "Yes" },
+		{ label: "No" },
+	];
+	w.onDidAccept(async () => {
+		const selection = w.activeItems[0];
+		if (selection.label === "Yes") {
+			console.log(`git push ${remoteName}  HEAD:refs/heads/${branchName}`);
+			// await repo.push(`${remoteName}`, `HEAD:ref/for/refs/heads/${branchName}`)
+			await repo.push(`${remoteName}`, `HEAD:refs/for/${branchName}`)
+				.catch((err: any) => {
+					vscode.window.showErrorMessage(err.stderr);
+				});
+
+		} else {
+			console.log("user Cancelled");
+		}
+		w.hide();
+	});
+
+	w.onDidHide(() => w.dispose());
+	w.show();
+}
+
+
 //push 相关的处理
-async function mainGerritPush(uri: any) {
+// 如果是当前仓库。
+async function mianPushG(uri: any) {
 
 	// check git extension is installed
 	const cgit = getGitExtension();
@@ -33,7 +67,7 @@ async function mainGerritPush(uri: any) {
 			return;
 		}
 	} else {
-		return push(uri);
+		return selectingPush(uri);
 	}
 }
 
@@ -87,34 +121,7 @@ async function pushg(gitr: Repository, uri: any) {
 		// });
 		// quickPick.onDidHide(() => quickPick.dispose());
 		// quickPick.show();
-
-		const w = vscode.window.createQuickPick();
-		w.canSelectMany = false;
-		w.title = `确定推送？\r\n${remoteName} HEAD:ref/for/refs/heads/${branchName}`;
-		w.placeholder = "Yes";
-		w.items = [
-			{ label: "Yes" },
-			{ label: "No" },
-		];
-		w.onDidAccept(async () => {
-			const selection = w.activeItems[0];
-			if (selection.label === "Yes") {
-
-				console.log(`git push ${remoteName}  HEAD:refs/heads/${branchName}`);
-				// await repo.push(`${remoteName}`, `HEAD:ref/for/refs/heads/${branchName}`)
-				await repo.push(`${remoteName}`, `HEAD:refs/for/${branchName}`)
-					.catch((err: any) => {
-						vscode.window.showErrorMessage(err.stderr);
-					});
-
-			} else {
-				console.log("user Cancelled");
-			}
-			w.hide();
-		});
-
-		w.onDidHide(() => w.dispose());
-		w.show();
+		pushCommit(repo, remoteName, branchName as string);
 	} catch (error) {
 		vscode.window.showErrorMessage("Maybe There is No remote now!");
 	}
@@ -129,50 +136,56 @@ async function pushg(gitr: Repository, uri: any) {
 	// 	console.log(mergeref);
 	// } catch (error) {
 	// 	vscode.window.showErrorMessage("Maybe There is No remote now!");
-	// }	
+	// }
 }
 
 
 // 点击按钮推送到选择的分支到到远程 gerrit 分支
-// Gerrit.Helper.push
-async function push(uri: any) {
+async function selectingPush(uri: any) {
 	const repoRaw = await gitAPI("repos");
-	const repos: any = [];
+	const reposName: any = [];
 	repoRaw.forEach((value: any, index: number) => {
 		const rName = path.basename(value._repository.root);
 		const rDesc = [value._repository.headLabel, value._repository.syncLabel]
 			.filter(l => !!l)
 			.join(' ');
-		repos.push({ id: index, label: rName, description: rDesc });
+		reposName.push({ id: index, label: rName, description: rDesc });
 	});
-	const repoId: any = await showRepoQuickPick(repos);
+	const repoId: any = await showRepoQuickPick(reposName);
 
 	const branchRaw = await gitAPI("branch", "", repoId['id']);
-	const branch: string[] = [];
+	const branchsName: string[] = [];
 	branchRaw.forEach(function (value: any) {
-		branch.push(value['name']);
+		branchsName.push(value['name']);
 	});
-	showBranchQuickPick(branch, repoId['id']);
+	showBranchQuickPick(branchsName, repoId['id']);
 }
 
-async function gitAPI(val: string, pushBranch: string = "", id: number = 0) {
+// 根据val 参数获取 git的相关操作, 获取 仓库，分支，和推送
+async function gitAPI(val: string, pushBranch: string = "", id: number = 0, remoteName: string = "origin") {
 	const gitExtension = vscode.extensions.getExtension('vscode.git');
 	const git = gitExtension?.exports;
 	const api = git.getAPI(1);
-	if (val === "branch") {
-		const repo = api.repositories[id];
-		const branch = await repo.getBranches("origin");
-		return branch;
-	} else if (val === "push") {
-		const repo = api.repositories[id];
-		repo.push("origin", `HEAD:refs/for/${pushBranch}`)
-			.catch((err: any) => {
-				vscode.window.showErrorMessage(err.stderr);
-			});
-	} else if (val === "repos") {
+	// 获取仓库
+	if (val === "repos") {
 		const repo = api.repositories;
 		console.log(repo);
 		return repo;
+	}
+
+	// 获取分支
+	else if (val === "branch") {
+		const repo = api.repositories[id];
+		const branch = await repo.getBranches(remoteName);
+		return branch;
+
+	}
+
+	// 推送
+	else if (val === "push") {
+		const repo = api.repositories[id];
+		pushCommit(repo, remoteName, pushBranch);
+		return;
 	}
 }
 
@@ -192,8 +205,8 @@ function showBranchQuickPick(codes: any, id: any) {
 		quickPick.onDidAccept(async () => {
 			const selection = quickPick.activeItems[0];
 			resolve(selection.label);
-			gitAPI("push", selection.label, id);
 			quickPick.hide();
+			gitAPI("push", selection.label, id);
 		});
 		quickPick.onDidChangeValue(() => {
 			// add a new code to the pick list as the first item
@@ -208,7 +221,7 @@ function showBranchQuickPick(codes: any, id: any) {
 }
 
 
-// this method is called when your extension is activated
+//* this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
@@ -232,11 +245,9 @@ export function activate(context: vscode.ExtensionContext) {
 	// 3. 批量 hook
 	// 4. 批量分支切换
 	// 5. 进行 sync（git pull --force）
-	let disposable = vscode.commands.registerCommand('Gerrit.Helper.push', mainGerritPush);
-	let disposable2 = vscode.commands.registerCommand('Gerrit.Helper.pushg', mainGerritPush);
+	let disposable = vscode.commands.registerCommand('Gerrit.Helper.pushg', mianPushG);
 
 	context.subscriptions.push(disposable);
-	context.subscriptions.push(disposable2);
 }
 
 // 在git的输入栏添加前置消息

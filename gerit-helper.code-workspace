@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "..\\git-emoji-zh"
 		}
 	],
 	"settings": {
