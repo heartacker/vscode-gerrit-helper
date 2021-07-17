@@ -2,7 +2,7 @@
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push Helper",
 	"description": "Gerrit Push,and Helper,推送当前分支到Gerrit的同名分支中以便评审。以及其他特定功能",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -38,6 +38,10 @@
 		"Visualization",
 		"Other",
 		"SCM Providers"
+	],
+	"extensionKind": [
+		"ui",
+		"workspace"
 	],
 	"activationEvents": [
 		"onCommand:Gerrit.Helper.pushg",
@@ -98,54 +102,79 @@
 				"when": "commentEditorFocused"
 			},
 			{
-				"key": "ctrl+shift+oem_3",
-				"command": "workbench.action.terminal.newWithProfile",
-				"when": "terminalProcessSupported"
+				"key": "f1",
+				"command": "workbench.action.navigateBack"
+			},
+			{
+				"key": "alt+f1",
+				"mac": "alt+f1",
+				"command": "workbench.action.navigateForward"
+			},
+			{
+				"key": "shift+f1",
+				"command": "editor.action.referenceSearch.trigger",
+				"when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor",
+				"commen": "查找引用"
+			},
+			{
+				"key": "ctrl+f1",
+				"mac": "cmd+f1",
+				"command": "editor.action.goToImplementation",
+				"when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor",
+				"commen": "转到定义的实现"
 			},
 			{
 				"key": "ctrl+shift+oem_3",
+				"mac": "cmd+shift+oem_3",
+				"command": "workbench.action.terminal.newWithProfile",
+				"when": "terminalProcessSupported",
+				"commen": "选择工作区和shell"
+			},
+			{
+				"key": "ctrl+shift+oem_3",
+				"mac": "ctrl+shift+oem_3",
 				"command": "-workbench.action.terminal.new",
 				"when": "terminalProcessSupported"
 			},
 			{
 				"key": "ctrl+shift+alt+j",
-				"command": "workbench.action.toggleMaximizedPanel"
+				"mac": "cmd+shift+alt+j",
+				"command": "workbench.action.toggleMaximizedPanel",
+				"comment": "最大化面板"
 			},
 			{
-				"key": "ctrl+alt+j",
-				"command": "editor.action.insertSnippet"
+				"key": "ctrl+alt+i",
+				"mac": "cmd+alt+i",
+				"command": "editor.action.insertSnippet",
+				"when": "editorTextFocus || editorHasSelection",
+				"comment": "插入代码提示"
 			},
 			{
 				"key": "ctrl+win+oem_plus",
 				"command": "workbench.action.minimizeOtherEditors",
-				"comment": "ctrl+win++"
+				"comment": "ctrl+win++,最大化编辑器组"
 			},
 			{
 				"key": "ctrl+win+oem_minus",
 				"command": "workbench.action.evenEditorWidths",
-				"comment": "ctrl+win+-"
+				"comment": "ctrl+win+-，恢复编辑器组大小"
 			},
 			{
 				"key": "ctrl+alt+f5",
-				"command": "workbench.action.debug.selectandstart"
+				"cmd": "cmd+alt+f5",
+				"command": "workbench.action.debug.selectandstart",
+				"comment": "选择那个去运行debug"
 			},
 			{
-				"key": "shift+alt+t",
-				"command": "workbench.action.tasks.runTask"
+				"key": "ctrl+shift+b",
+				"mac": "cmd+shift+b",
+				"command": "workbench.action.tasks.runTask",
+				"comment": "选择那个去build"
 			},
 			{
 				"key": "alt+f8",
 				"command": "textmarker.toggleHighlight",
 				"when": "editorTextFocus"
-			},
-			{
-				"key": "f1",
-				"command": "workbench.action.navigateBack"
-			},
-			{
-				"key": "ctrl+shift+j",
-				"command": "workbench.action.terminal.toggleTerminal",
-				"when": "!inSearchEditor && !searchViewletFocus"
 			}
 		]
 	},
