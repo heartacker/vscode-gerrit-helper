@@ -28,7 +28,6 @@ async function pushCommit(repo: Repository, remoteName: string, branchName: stri
 				.catch((err: any) => {
 					vscode.window.showErrorMessage(err.stderr);
 				});
-
 		} else {
 			console.log("user Cancelled");
 		}

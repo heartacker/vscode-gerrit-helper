@@ -4,7 +4,11 @@ All notable changes to the "GerritHelper" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [V0.0.3](2021-7-17)
+## [V0.0.5] 2021-7-17
+
+- 修复快捷键配置错误
+
+## [V0.0.3] 2021-7-17
 
 - 重新优化了大部分快捷键。
 - 提高git 推送的稳定性等
