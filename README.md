@@ -8,7 +8,7 @@ help push to gerrit for review inside VSCode, no need to use command line shell 
 
 1. pushg branch to the gerrit, you can click the icon of the git repo title bar,
 2. select specific **repo**、**branch** to push。
-   1. you can also use shortcut key `ctrl+shift+g p`。
+   1. you can also use shortcut key `ctrl+shift+g ctrl+p`。
 3. better commit information for commit。
    1. you can alse use `ctrl+shift+enter` when you're focusing the git commit box.
 4. gerrit other helpful tool and commanders
