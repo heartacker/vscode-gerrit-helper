@@ -2,7 +2,7 @@
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push & Helper",
 	"description": "Gerit Push,and Helper,推送当前分支到Gerrit的同名分支中以便评审。以及其他特定功能",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -45,24 +45,25 @@
 	],
 	"activationEvents": [
 		"onCommand:Gerrit.Helper.pushg",
-		"onCommand:Gerrit.Helper.push"
+		"onCommand:Gerrit.Helper.acommit",
+		"onCommand:Gerrit.Helper.HelperCommands"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "Gerrit.Helper.HelperCommands",
-				"title": "其他有用的 Gerrit 帮助命令",
+				"title": "Gerrit.Helper: HelperCommands 帮助命令",
 				"shorttitle": "Gerrit.Helper.HelperCommands"
 			},
 			{
 				"command": "Gerrit.Helper.acommit",
-				"title": "规范 Git 的提交信息 (acommit)",
+				"title": "Gerrit.Helper: 规范 Git 的提交信息 (acommit)",
 				"shorttitle": "Gerrit.Helper.acommit"
 			},
 			{
 				"command": "Gerrit.Helper.pushg",
-				"title": "推送当前分支到 Gerrit(pushg)",
+				"title": "Gerrit.Helper: 推送当前分支到 Gerrit(pushg)",
 				"shortTitle": "Gerrit.Helper.pushg",
 				"icon": {
 					"dark": "images/gerrit-helper-pushg-dark.svg",
@@ -97,8 +98,8 @@
 			},
 			{
 				"command": "Gerrit.Helper.acommit",
-				"key": "ctrl+shift+enter",
-				"mac": "cmd+shift+enter",
+				"key": "alt+enter",
+				"mac": "alt+enter",
 				"when": "commentEditorFocused"
 			},
 			{

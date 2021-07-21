@@ -7,6 +7,52 @@ import { API } from "./api/git";
 import { Git, GitExtension, Repository } from "./api/git";
 
 
+
+
+// =======acommit====================================
+// 在git的输入栏添加前置消息
+function prefixCommit(repository: Repository, prefix: String) {
+	repository.inputBox.value = `${prefix}${repository.inputBox.value}`;
+}
+
+async function acommit(uri: any) {
+
+	const git = getGitExtension();
+	if (!git) {
+		return;
+	}
+
+
+	// let items = emojis.map(display_method[method_key]);
+
+	//! vscode.window.showQuickPick(items).then(
+	// 	function (selected) {
+	// 		if (selected) {
+	console.log(uri);
+	if (uri) {
+		let selectedRepository = git.repositories.find((repository) => {
+			return repository.rootUri.path === uri._rootUri.path;
+		});
+		if (selectedRepository) {
+			// prefixCommit(selectedRepository, selected.emoji);
+			prefixCommit(selectedRepository, "[feature]");
+		}
+	} else {
+		vscode.commands.executeCommand('workbench.view.scm');
+		for (let repo of git.repositories) {
+			// prefixCommit(repo, selected.emoji);
+			prefixCommit(repo, "[feature]");
+		}
+	}
+	// 		}
+	// 	}
+	//! );
+
+	return;
+}
+
+// =======pushg====================================
+
 // 弹窗确定进行Commit
 async function pushCommit(repo: Repository, remoteName: string, branchName: string) {
 
@@ -243,16 +289,27 @@ export function activate(context: vscode.ExtensionContext) {
 	// 2. 支持pushg
 	// 3. 批量 hook
 	// 4. 批量分支切换
-	// 5. 进行 sync（git pull --force）
+	// 5. 进行 sync(git pull --force)
+
 	let disposable = vscode.commands.registerCommand('Gerrit.Helper.pushg', mianPushG);
+	let disposable1 = vscode.commands.registerCommand('Gerrit.Helper.acommit', acommit);
 
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(disposable1);
+
+	/**
+		//* 切换pannel的快捷方式
+		const statusBarItem = vscode.window.createStatusBarItem(
+			vscode.StatusBarAlignment.Right,
+			-200
+		);
+		statusBarItem.command = "workbench.action.togglePanel";
+		statusBarItem.text = `$(console)`;
+		statusBarItem.tooltip = "Toggle the panel";
+		statusBarItem.show();
+	*/
 }
 
-// 在git的输入栏添加前置消息
-function prefixCommit(repository: Repository, prefix: String) {
-	repository.inputBox.value = `${prefix}${repository.inputBox.value}`;
-}
 
 // 获取当前的git插件
 function getGitExtension() {
