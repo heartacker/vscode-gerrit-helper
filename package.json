@@ -1,8 +1,8 @@
 {
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push & Helper",
-	"description": "Gerit Push,and Helper,推送当前分支到Gerrit的同名分支中以便评审。以及其他特定功能",
-	"version": "0.0.6",
+	"description": "Gerit Push,and Helper, 推送当前分支到 Gerrit 的同名分支中以便评审, 以及其他特定功能",
+	"version": "0.0.7",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -40,8 +40,8 @@
 		"SCM Providers"
 	],
 	"extensionKind": [
-		"ui",
-		"workspace"
+		"workspace",
+		"ui"
 	],
 	"activationEvents": [
 		"onCommand:Gerrit.Helper.pushg",
@@ -92,14 +92,18 @@
 		},
 		"keybindings": [
 			{
+				"key": "ctrl+shift+g ctrl+shift+g",
+				"command": "workbench.view.scm"
+			},
+			{
 				"command": "Gerrit.Helper.pushg",
 				"key": "ctrl+shift+g ctrl+p",
-				"mac": "cmd+shift+g cmd+p"
+				"commentMacOS": "cmd+shift+g cmd+p"
 			},
 			{
 				"command": "Gerrit.Helper.acommit",
 				"key": "alt+enter",
-				"mac": "alt+enter",
+				"commentMacOS": "alt+enter",
 				"when": "commentEditorFocused"
 			},
 			{
@@ -108,43 +112,43 @@
 			},
 			{
 				"key": "alt+f1",
-				"mac": "alt+f1",
+				"commentMacOS": "alt+f1",
 				"command": "workbench.action.navigateForward"
 			},
 			{
 				"key": "shift+f1",
 				"command": "editor.action.referenceSearch.trigger",
 				"when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor",
-				"commen": "查找引用"
+				"commend": "查找引用"
 			},
 			{
 				"key": "ctrl+f1",
 				"mac": "cmd+f1",
-				"command": "editor.action.revealDefinition",
+				"commentMacOS": "editor.action.revealDefinition",
 				"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
 			},
 			{
 				"key": "ctrl+f1",
-				"mac": "cmd+f1",
+				"commentMacOS": "cmd+f1",
 				"command": "goToNextReference",
 				"when": "inReferenceSearchEditor || referenceSearchVisible"
 			},
 			{
 				"key": "ctrl+shift+oem_3",
-				"mac": "cmd+shift+oem_3",
+				"commentMacOS": "cmd+shift+oem_3",
 				"command": "workbench.action.terminal.newWithProfile",
 				"when": "terminalProcessSupported",
-				"commen": "选择工作区和shell"
+				"commen": "选择工作区和 shell"
 			},
 			{
 				"key": "ctrl+shift+alt+j",
-				"mac": "cmd+shift+alt+j",
+				"commentMacOS": "cmd+shift+alt+j",
 				"command": "workbench.action.toggleMaximizedPanel",
 				"comment": "最大化面板"
 			},
 			{
 				"key": "ctrl+alt+i",
-				"mac": "cmd+alt+i",
+				"commentMacOS": "cmd+alt+i",
 				"command": "editor.action.insertSnippet",
 				"when": "editorTextFocus || editorHasSelection",
 				"comment": "插入代码提示"
@@ -152,27 +156,27 @@
 			{
 				"key": "ctrl+win+oem_plus",
 				"command": "workbench.action.minimizeOtherEditors",
-				"comment": "ctrl+win++,最大化编辑器组"
+				"comment": "ctrl+win+ + , 最大化编辑器组"
 			},
 			{
 				"key": "ctrl+win+oem_minus",
 				"command": "workbench.action.evenEditorWidths",
-				"comment": "ctrl+win+-，恢复编辑器组大小"
+				"comment": "ctrl+win+- ， 恢复编辑器组大小"
 			},
 			{
 				"key": "ctrl+alt+f5",
-				"cmd": "cmd+alt+f5",
+				"commentMacOS": "cmd+alt+f5",
 				"command": "workbench.action.debug.selectandstart",
-				"comment": "选择那个去运行debug"
+				"comment": "选择那个去运行 debug"
 			},
 			{
 				"key": "ctrl+alt+b",
-				"mac": "cmd+alt+b",
+				"commentMacOS": "cmd+alt+b",
 				"command": "workbench.action.tasks.runTask",
-				"comment": "选择那个去build"
+				"comment": "选择那个去 build"
 			},
 			{
-				"key": "alt+f8",
+				"key": "alt+f11",
 				"command": "textmarker.toggleHighlight",
 				"when": "editorTextFocus"
 			}

@@ -1,6 +1,6 @@
 # GerritHelper
 
-GerritHelper
+GerritHelper, help push to gerrit for review inside VSCode, no need to use command line shell again.
 
 ## Features
 
@@ -8,29 +8,30 @@ help push to gerrit for review inside VSCode, no need to use command line shell 
 
 1. pushg branch to the gerrit, you can click the icon of the git repo title bar,
 2. select specific **repo**、**branch** to push。
-   1. you can also use shortcut key `ctrl+shift+g ctrl+p`。
-3. better commit information for commit。
-   1. you can alse use `ctrl+shift+enter` when you're focusing the git commit box.
-4. gerrit other helpful tool and commanders
+   1. you can also use shortcut key <kbd>ctrl+shift+g ctrl+p</kbd>。
+3. [ ] better commit information for commit。
+   1. [ ] you can alse use <kbd>alt+enter</kbd> when you're focusing the git commit box.
+4. [ ] gerrit other helpful tool and commanders
 
 ## Extra Features
 
--  添加几个非常好用的快捷键支持，基本不会和其他插件冲突。  
+-  添加几个非常好用的快捷键支持，基本不会和其他插件冲突。
 
-  |    |             快捷键 |                                                                                                           |
-  |----|-------------------:|-----------------------------------------------------------------------------------------------------------|
-  | 0  |     `ctrl+shift+~` | 创建新的终端。支持选择工作区。                                                                              |
-  | 1  | `ctrl+shift+alt+j` | 切换最大化最小化面板。                                                                                     |
-  | 2  |       `ctrl+alt+i` | 插入当前代码块。                                                                                           |
-  | 3  |       `ctrl+win+=` | 最大化当前编辑器组。                                                                                       |
-  | 4  |       `ctrl+win+-` | 恢复当前编辑器组的大小。                                                                                   |
-  | 5  |           `alt+f8` | 高亮代码，需要你安装 [textMarker](https://marketplace.visualstudio.com/items?itemName=ryu1kn.text-marker)。 |
-  | 6  |               `f1` | 返回, 等价`alt +  ⬅`                                                                                      |
-  | 7  |           `alt+F1` | 前进, 等价`alt +  ➡`                                                                                      |
-  | 8  |          `ctrl+F1` | 转到实现或/定义, 等价`ctrl+F12`                                                                           |
-  | 9  |         `shift+F1` | 查找应用, 等价`shift+F12`                                                                                 |
-  | 10 |      `ctrl+alt+f5` | 选择那个调试任务去运行debug                                                                               |
-  | 11 |       `ctrl+alt+b` | 选择那个构建任务去build                                                                                   |
+
+ I   |                      快捷键 | 描述
+ --- | --------------------------: | --
+ 0   |     <kbd>ctrl+shift+~</kbd> | 创建新的终端。支持选择工作区。
+ 1   | <kbd>ctrl+shift+alt+j</kbd> | 切换最大化最小化面板。
+ 2   |       <kbd>ctrl+alt+i</kbd> | 插入当前语言代码片段。
+ 3   |       <kbd>ctrl+win+=</kbd> | 最大化当前编辑器组。
+ 4   |       <kbd>ctrl+win+-</kbd> | 恢复当前编辑器组的大小。
+ 5   |          <kbd>alt+f11</kbd> | 高亮代码，需要你安装 [TextMarker](https://marketplace.visualstudio.com/items?itemName=ryu1kn.text-marker)。
+ 6   |               <kbd>f1</kbd> | 返回, 等价<kbd>alt +  ⬅</kbd>
+ 7   |           <kbd>alt+F1</kbd> | 前进, 等价<kbd>alt +  ➡</kbd>
+ 8   |          <kbd>ctrl+F1</kbd> | 转到实现或/定义, 等价<kbd>ctrl+F12</kbd>
+ 9   |         <kbd>shift+F1</kbd> | 查找应用, 等价<kbd>shift+F12</kbd>
+ 10  |      <kbd>ctrl+alt+f5</kbd> | 选择那个调试任务去运行 debug
+ 11  |       <kbd>ctrl+alt+b</kbd> | 选择那个构建任务去 build
 
 
 
@@ -45,28 +46,27 @@ help push to gerrit for review inside VSCode, no need to use command line shell 
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
+None
 ## Future feature
 - [x] 支持当前仓库直接推送
 - [x] 支持选择指定仓库和分支进行推送
 - [ ] 支持规范提交信息
   - [ ] 支持对话框选择提示
   - [ ] 支持提示是否直接提交还是不提交
-- [ ] 支持添加pushg 到windows的alias
+- [ ] 支持添加 pushg 到 windows 的 alias
 - [ ] 支持批量 hook 信息复制
 - [ ] 支持账号配置
 - [ ] 支持规范信息模板配置
- 
+
 ## Known Issues
 
 None
-## Release Notes
 
-### 1.0.0
+## Recently ChangeLog
 
-  - [ ] 支持对话框选择提示
-Initial release of ...
-**Enjoy!**
+### [v0.0.7] 2021-08-27
+- Remove all MacOS Shortcut
+- Change toggle highlight(<font color=orange>TextMarker</font>) from <kbd>Alt+f8</kbd> to <kbd>Alt+f11</kbd>
+- Add <kbd>Ctrl+Shift+g</kbd> + <kbd>Ctrl+Shift+g</kbd> for focus SCM viewer
+- Modify README.md
+
