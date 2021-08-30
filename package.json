@@ -2,7 +2,7 @@
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push & Helper",
 	"description": "Gerit Push,and Helper, 推送当前分支到 Gerrit 的同名分支中以便评审, 以及其他特定功能",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -147,8 +147,8 @@
 				"comment": "最大化面板"
 			},
 			{
-				"key": "ctrl+alt+i",
-				"commentMacOS": "cmd+alt+i",
+				"key": "ctrl+shift+i",
+				"commentMacOS": "cmd+shift+i",
 				"command": "editor.action.insertSnippet",
 				"when": "editorTextFocus || editorHasSelection",
 				"comment": "插入代码提示"

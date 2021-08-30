@@ -18,20 +18,20 @@ help push to gerrit for review inside VSCode, no need to use command line shell 
 -  添加几个非常好用的快捷键支持，基本不会和其他插件冲突。
 
 
- I   |                      快捷键 | 描述
- --- | --------------------------: | --
- 0   |     <kbd>ctrl+shift+~</kbd> | 创建新的终端。支持选择工作区。
- 1   | <kbd>ctrl+shift+alt+j</kbd> | 切换最大化最小化面板。
- 2   |       <kbd>ctrl+alt+i</kbd> | 插入当前语言代码片段。
- 3   |       <kbd>ctrl+win+=</kbd> | 最大化当前编辑器组。
- 4   |       <kbd>ctrl+win+-</kbd> | 恢复当前编辑器组的大小。
- 5   |          <kbd>alt+f11</kbd> | 高亮代码，需要你安装 [TextMarker](https://marketplace.visualstudio.com/items?itemName=ryu1kn.text-marker)。
- 6   |               <kbd>f1</kbd> | 返回, 等价<kbd>alt +  ⬅</kbd>
- 7   |           <kbd>alt+F1</kbd> | 前进, 等价<kbd>alt +  ➡</kbd>
- 8   |          <kbd>ctrl+F1</kbd> | 转到实现或/定义, 等价<kbd>ctrl+F12</kbd>
- 9   |         <kbd>shift+F1</kbd> | 查找应用, 等价<kbd>shift+F12</kbd>
- 10  |      <kbd>ctrl+alt+f5</kbd> | 选择那个调试任务去运行 debug
- 11  |       <kbd>ctrl+alt+b</kbd> | 选择那个构建任务去 build
+|                                         快捷键 | 描述                                                                                                        |
+| ---------------------------------------------: | ----------------------------------------------------------------------------------------------------------- |
+|                        <kbd>ctrl+shift+~</kbd> | 创建新的终端。支持选择工作区。                                                                              |
+|                    <kbd>ctrl+shift+alt+j</kbd> | 切换最大化最小化面板。                                                                                      |
+| <kbd>ctrl+shift+i</kbd> <kbd>cmd+shift+i</kbd> | 插入当前语言代码片段。                                                                                      |
+|                          <kbd>ctrl+win+=</kbd> | 最大化当前编辑器组。                                                                                        |
+|                          <kbd>ctrl+win+-</kbd> | 恢复当前编辑器组的大小。                                                                                    |
+|                             <kbd>alt+f11</kbd> | 高亮代码，需要你安装 [TextMarker](https://marketplace.visualstudio.com/items?itemName=ryu1kn.text-marker)。 |
+|                                  <kbd>f1</kbd> | 返回, 等价<kbd>alt +  ⬅</kbd>                                                                               |
+|                              <kbd>alt+F1</kbd> | 前进, 等价<kbd>alt +  ➡</kbd>                                                                               |
+|                             <kbd>ctrl+F1</kbd> | 转到实现或/定义, 等价<kbd>ctrl+F12</kbd>                                                                    |
+|                            <kbd>shift+F1</kbd> | 查找应用, 等价<kbd>shift+F12</kbd>                                                                          |
+|                         <kbd>ctrl+alt+f5</kbd> | 选择那个调试任务去运行 debug                                                                                |
+|                          <kbd>ctrl+alt+b</kbd> | 选择那个构建任务去 build                                                                                    |
 
 
 
@@ -63,6 +63,9 @@ None
 None
 
 ## Recently ChangeLog
+
+### [v0.0.8] 2021-08-31
+- Change <kbd>Ctrl+alt+i</kbd> to <kbd>Ctrl+Shift+i</kbd>/MacOS <kbd>Cmd+shift+i</kbd>for `insert snippet`
 
 ### [v0.0.7] 2021-08-27
 - Remove all MacOS Shortcut
