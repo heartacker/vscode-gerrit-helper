@@ -1,8 +1,8 @@
 {
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push & Helper",
-	"description": "Gerit Push,and Helper, 推送当前分支到 Gerrit 的同名分支中以便评审, 以及其他特定功能",
-	"version": "0.0.8",
+	"description": "Gerit Push,and Helper, 推送当前分支到 Gerrit 的同名分支中以便评审",
+	"version": "0.0.9",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -45,22 +45,11 @@
 	],
 	"activationEvents": [
 		"onCommand:Gerrit.Helper.pushg",
-		"onCommand:Gerrit.Helper.acommit",
-		"onCommand:Gerrit.Helper.HelperCommands"
+		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
-			{
-				"command": "Gerrit.Helper.HelperCommands",
-				"title": "Gerrit.Helper: HelperCommands 帮助命令",
-				"shorttitle": "Gerrit.Helper.HelperCommands"
-			},
-			{
-				"command": "Gerrit.Helper.acommit",
-				"title": "Gerrit.Helper: 规范 Git 的提交信息 (acommit)",
-				"shorttitle": "Gerrit.Helper.acommit"
-			},
 			{
 				"command": "Gerrit.Helper.pushg",
 				"title": "Gerrit.Helper: 推送当前分支到 Gerrit(pushg)",
@@ -77,16 +66,6 @@
 					"when": "scmProvider == git",
 					"command": "Gerrit.Helper.pushg",
 					"group": "navigation"
-				},
-				{
-					"when": "scmProvider == git",
-					"command": "Gerrit.Helper.acommit",
-					"group": "3_footer"
-				},
-				{
-					"when": "scmProvider == git",
-					"command": "Gerrit.Helper.HelperCommands",
-					"group": "3_footer"
 				}
 			]
 		},
@@ -99,12 +78,6 @@
 				"command": "Gerrit.Helper.pushg",
 				"key": "ctrl+shift+g ctrl+p",
 				"commentMacOS": "cmd+shift+g cmd+p"
-			},
-			{
-				"command": "Gerrit.Helper.acommit",
-				"key": "alt+enter",
-				"commentMacOS": "alt+enter",
-				"when": "commentEditorFocused"
 			},
 			{
 				"key": "f1",
@@ -170,7 +143,7 @@
 				"comment": "选择那个去运行 debug"
 			},
 			{
-				"key": "ctrl+alt+b",
+				"key": "ctrl++shift+alt+b",
 				"commentMacOS": "cmd+alt+b",
 				"command": "workbench.action.tasks.runTask",
 				"comment": "选择那个去 build"

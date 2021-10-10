@@ -86,7 +86,7 @@ async function pushCommit(repo: Repository, remoteName: string, branchName: stri
 
 //push 相关的处理
 // 如果是当前仓库。
-async function mianPushG(uri: any) {
+async function mainPushG(uri: any) {
 
 	// check git extension is installed
 	const cgit = getGitExtension();
@@ -291,23 +291,21 @@ export function activate(context: vscode.ExtensionContext) {
 	// 4. 批量分支切换
 	// 5. 进行 sync(git pull --force)
 
-	let disposable = vscode.commands.registerCommand('Gerrit.Helper.pushg', mianPushG);
-	let disposable1 = vscode.commands.registerCommand('Gerrit.Helper.acommit', acommit);
+	let disposable = vscode.commands.registerCommand('Gerrit.Helper.pushg', mainPushG);
 
 	context.subscriptions.push(disposable);
-	context.subscriptions.push(disposable1);
 
-	/**
-		//* 切换pannel的快捷方式
-		const statusBarItem = vscode.window.createStatusBarItem(
-			vscode.StatusBarAlignment.Right,
-			-200
-		);
-		statusBarItem.command = "workbench.action.togglePanel";
-		statusBarItem.text = `$(console)`;
-		statusBarItem.tooltip = "Toggle the panel";
-		statusBarItem.show();
-	*/
+	/* //* 切换pannel的快捷方式
+	const sidePanel = vscode.window.createStatusBarItem(
+		vscode.StatusBarAlignment.Right,
+		-200
+	);
+
+	sidePanel.command = "workbench.action.toggleAuxiliaryBar";
+	sidePanel.text = `$(chevron-right)`;
+	sidePanel.tooltip = "Toggle Side panel";
+	sidePanel.show(); */
+
 }
 
 

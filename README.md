@@ -7,11 +7,7 @@ GerritHelper, help push to gerrit for review inside VSCode, no need to use comma
 help push to gerrit for review inside VSCode, no need to use command line shell again.
 
 1. pushg branch to the gerrit, you can click the icon of the git repo title bar,
-2. select specific **repo**、**branch** to push。
-   1. you can also use shortcut key <kbd>ctrl+shift+g ctrl+p</kbd>。
-3. [ ] better commit information for commit。
-   1. [ ] you can alse use <kbd>alt+enter</kbd> when you're focusing the git commit box.
-4. [ ] gerrit other helpful tool and commanders
+2. select specific **repo**、**branch** to push, you can also use shortcut key <kbd>ctrl+shift+g ctrl+p</kbd>。
 
 ## Extra Features
 
@@ -31,12 +27,10 @@ help push to gerrit for review inside VSCode, no need to use command line shell 
 |                             <kbd>ctrl+F1</kbd> | 转到实现或/定义, 等价<kbd>ctrl+F12</kbd>                                                                    |
 |                            <kbd>shift+F1</kbd> | 查找应用, 等价<kbd>shift+F12</kbd>                                                                          |
 |                         <kbd>ctrl+alt+f5</kbd> | 选择那个调试任务去运行 debug                                                                                |
-|                          <kbd>ctrl+alt+b</kbd> | 选择那个构建任务去 build                                                                                    |
-
+|                    <kbd>ctrl+shift+alt+b</kbd> | 选择那个构建任务去 build                                                                                    |
 
 
 - 其他
-
 
 ## Requirements
 
@@ -56,7 +50,6 @@ None
 - [ ] 支持添加 pushg 到 windows 的 alias
 - [ ] 支持批量 hook 信息复制
 - [ ] 支持账号配置
-- [ ] 支持规范信息模板配置
 
 ## Known Issues
 
@@ -64,10 +57,17 @@ None
 
 ## Recently ChangeLog
 
+### [v0.0.9] 2021-10-10
+
+- Change <kbd>Ctrl+alt+b</kbd> to <kbd>Ctrl+Shift+alt+b</kbd> for `workbench.action.tasks.runTask`
+- delete unuseful commands
+
 ### [v0.0.8] 2021-08-31
+
 - Change <kbd>Ctrl+alt+i</kbd> to <kbd>Ctrl+Shift+i</kbd>/MacOS <kbd>Cmd+shift+i</kbd>for `insert snippet`
 
 ### [v0.0.7] 2021-08-27
+
 - Remove all MacOS Shortcut
 - Change toggle highlight(<font color=orange>TextMarker</font>) from <kbd>Alt+f8</kbd> to <kbd>Alt+f11</kbd>
 - Add <kbd>Ctrl+Shift+g</kbd> + <kbd>Ctrl+Shift+g</kbd> for focus SCM viewer

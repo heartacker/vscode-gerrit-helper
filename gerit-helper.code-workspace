@@ -2,10 +2,25 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "..\\outsidecode-surround"
+		},
+		{
+			"path": "..\\snippet-dog"
+		},
+		{
+			"path": "..\\vscode-command-runner"
+		},
+		{
+			"path": "..\\vscode-snippets-viewer"
 		}
 	],
 	"settings": {
-		"typescript.tsc.autoDetect": "off"
+		"typescript.tsc.autoDetect": "off",
+		"i18n-ally.localesPaths": [
+			"i18n"
+		]
 	},
 	"launch": {
 		"version": "0.2.0",
