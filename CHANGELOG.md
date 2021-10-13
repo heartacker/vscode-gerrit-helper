@@ -10,12 +10,12 @@ None
 
 ## [Released]
 
-### [v0.0.10] 2021-10-13
+### [v0.0.11] 2021-10-13
 
-add two extensions within pack:
-
-- [mhutchie.git-graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
-- [adam-bender.commit-message-editor](https://marketplace.visualstudio.com/items?itemName=adam-bender.commit-message-editor)
+- change readme
+- add two extensions within pack:
+  - [mhutchie.git-graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+  - [adam-bender.commit-message-editor](https://marketplace.visualstudio.com/items?itemName=adam-bender.commit-message-editor)
 
 ### [v0.0.9] 2021-10-10
 
