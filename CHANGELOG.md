@@ -10,9 +10,10 @@ None
 
 ## [Released]
 
-### [v0.0.12] 2021-10-28
+### [v0.0.13] 2021-10-28
 
 - fix the <kbd>ctrl+alt+shift+b</kbd>
+- delete `adam-bender.commit-message-editor`
 
 ### [v0.0.11] 2021-10-13
 
