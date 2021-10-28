@@ -25,7 +25,7 @@ help push to gerrit for review inside VSCode, no need to use command line shell 
 |                                  <kbd>f1</kbd> | navigateBack                         | 返回, 等价<kbd>alt +  ⬅</kbd>                                                                               |
 |                              <kbd>alt+F1</kbd> | navigateForward                      | 前进, 等价<kbd>alt +  ➡</kbd>                                                                               |
 |                             <kbd>ctrl+F1</kbd> | goToImplementation                   | 转到实现或/定义, 等价<kbd>ctrl+F12</kbd>                                                                    |
-|                            <kbd>shift+F1</kbd> | goToReferences                       | 查找应用, 等价<kbd>shift+F12</kbd>                                                                          |
+|                            <kbd>shift+F1</kbd> | goToReferences                       | 查找引用, 等价<kbd>shift+F12</kbd>                                                                          |
 |                         <kbd>ctrl+alt+f5</kbd> | debug.selectandstart                 | 选择那个调试任务去运行 debug                                                                                |
 |                    <kbd>ctrl+alt+shift+b</kbd> | tasks.runTask                        | 选择那个构建任务去 build                                                                                    |
 

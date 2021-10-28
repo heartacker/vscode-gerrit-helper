@@ -10,6 +10,10 @@ None
 
 ## [Released]
 
+### [v0.0.12] 2021-10-28
+
+- fix the <kbd>ctrl+alt+shift+b</kbd>
+
 ### [v0.0.11] 2021-10-13
 
 - change readme

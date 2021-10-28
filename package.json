@@ -2,7 +2,7 @@
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push & Helper",
 	"description": "Gerit Push,and Helper, 推送当前分支到 Gerrit 的同名分支中以便评审",
-	"version": "0.0.11",
+	"version": "0.0.12",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -147,7 +147,7 @@
 				"comment": "选择那个去运行 debug"
 			},
 			{
-				"key": "ctrl++shift+alt+b",
+				"key": "ctrl+shift+alt+b",
 				"commentMacOS": "cmd+alt+b",
 				"command": "workbench.action.tasks.runTask",
 				"comment": "选择那个去 build"
