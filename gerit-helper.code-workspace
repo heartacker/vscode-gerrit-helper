@@ -2,18 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "..\\outsidecode-surround"
-		},
-		{
-			"path": "..\\snippet-dog"
-		},
-		{
-			"path": "..\\vscode-command-runner"
-		},
-		{
-			"path": "..\\vscode-snippets-viewer"
 		}
 	],
 	"settings": {
