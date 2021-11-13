@@ -1,12 +1,11 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
+import * as nls from 'vscode-nls';
+const localize = nls.loadMessageBundle();
+
 import path = require('path');
-import { cwd } from 'process';
 import * as vscode from 'vscode';
-import { API } from "./api/git";
 import { Git, GitExtension, Repository } from "./api/git";
-
-
 
 
 // =======acommit====================================
@@ -58,7 +57,9 @@ async function pushCommit(repo: Repository, remoteName: string, branchName: stri
 
 	const w = vscode.window.createQuickPick();
 	w.canSelectMany = false;
-	w.title = `确定推送分支[${branchName}]到 ${remoteName}: \'HEAD:ref/for/refs/heads/${branchName}\'`;
+
+	w.title = localize('gerrithelper.exec.push.confirm',
+		"Confirm push branch[{0}]-->[{1}]: \'HEAD:ref/for/refs/heads/{2}\'", branchName, remoteName, branchName);
 	w.placeholder = "Yes";
 	w.items = [
 		{ label: "Yes" },
@@ -70,10 +71,19 @@ async function pushCommit(repo: Repository, remoteName: string, branchName: stri
 		if (selection.label === "Yes") {
 			console.log(`git push ${remoteName}  HEAD:refs/heads/${branchName}`);
 			// await repo.push(`${remoteName}`, `HEAD:ref/for/refs/heads/${branchName}`)
+			let ret = false;
 			await repo.push(`${remoteName}`, `HEAD:refs/for/${branchName}`)
 				.catch((err: any) => {
-					vscode.window.showErrorMessage(err.stderr);
+					ret = true;
+					let msg = localize('gerrit.exec.push.fail', "GerritHelper: push branch fail, check in [Git] output log!");
+					vscode.window.showErrorMessage(msg + "\r\n" + err.stderr);
 				});
+			if (!ret) {
+				vscode.window.showInformationMessage(
+					localize('gerrit.exec.push.success', "GerritHelper: push branch sucess, check in [Git] output log!")
+				);
+			}
+			vscode.commands.executeCommand('git.showOutput');
 		} else {
 			console.log("user Cancelled");
 		}

@@ -10,6 +10,26 @@ None
 
 ## [Released]
 
+### [V1.0.0] 2021-11-13
+
+#### New
+
+- **Add keybinding for MAC OS** for those useful shortcuts.
+- clean up code.
+- i18n support(zh, en).
+- show message when success.
+- automatically focus the **git output** for push message.
+- add <kbd>Ctrl+N</kbd> to creat new file when focus on file explorer tree.
+- add <kbd>Ctrl+Shift+N</kbd> to creat new folder when focus on file explorer tree.
+  - that is useful for you when you focus on file tree when using <kbd>Ctrl+Shift+E</kbd> explicitly.
+- add <kbd>Ctrl+Alt+B</kbd> to toggle side panel.
+- add <kbd>Shift+Alt+F11</kbd> to `references-view.findImplementations`.
+
+#### Change
+
+- change <kbd>Ctrl+Shift+I</kbd> to  <kbd>Ctrl+Alt+I</kbd> to insert snippet.
+- set <kbd>Ctrl+Shift+I</kbd> to  `editor.action.triggerParameterHints`.
+
 ### [v0.0.13] 2021-10-28
 
 - fix the <kbd>ctrl+alt+shift+b</kbd>
@@ -26,7 +46,6 @@ None
 
 - Change <kbd>Ctrl+alt+b</kbd> to <kbd>Ctrl+Shift+alt+b</kbd> for `workbench.action.tasks.runTask`
 - delete unuseful commands
-
 
 ### [v0.0.8] 2021-08-31
 

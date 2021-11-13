@@ -1,0 +1,5 @@
+{
+    "gerrithelper.exec.push.success": "GerritHelper: 推送成功。 查阅 [Git] 输出日志！",
+    "gerrithelper.exec.push.fail": "GerritHelper: 推送失败。 查阅 [Git] 输出日志！",
+    "gerrithelper.exec.push.confirm": "确认推送分支 [{0}]-->[{1}]: 'HEAD:ref/for/refs/heads/{2}'"
+}
