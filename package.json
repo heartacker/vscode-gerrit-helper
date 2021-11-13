@@ -1,8 +1,8 @@
 {
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push & Helper",
-	"description": "Gerit Push,and Helper, 推送当前分支到 Gerrit 的同名分支中以便评审",
-	"version": "0.0.13",
+	"description": "Gerit Push,and Helper, push to gerrit,推送当前分支到 Gerrit 的同名分支中以便评审",
+	"version": "0.9.0",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -37,7 +37,8 @@
 	"categories": [
 		"Visualization",
 		"Other",
-		"SCM Providers"
+		"SCM Providers",
+		"Keymaps"
 	],
 	"extensionKind": [
 		"workspace",
@@ -45,6 +46,9 @@
 	],
 	"extensionPack": [
 		"mhutchie.git-graph"
+	],
+	"extensionDependencies": [
+		"vscode.git"
 	],
 	"extensionPackDel": [
 		"adam-bender.commit-message-editor"
@@ -54,11 +58,12 @@
 		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
+	"comment": "https://blog.csdn.net/eiilpux17/article/details/116808463",
 	"contributes": {
 		"commands": [
 			{
 				"command": "Gerrit.Helper.pushg",
-				"title": "Gerrit.Helper: 推送当前分支到 Gerrit(pushg)",
+				"title": "%gerrithelper.cmd.push.branch%",
 				"shortTitle": "Gerrit.Helper.pushg",
 				"icon": {
 					"dark": "images/gerrit-helper-pushg-dark.svg",
@@ -77,87 +82,118 @@
 		},
 		"keybindings": [
 			{
+				"command": "workbench.view.scm",
 				"key": "ctrl+shift+g ctrl+shift+g",
-				"command": "workbench.view.scm"
+				"mac": "cmd+shift+g cmd+shift+g"
 			},
 			{
 				"command": "Gerrit.Helper.pushg",
 				"key": "ctrl+shift+g ctrl+p",
-				"commentMacOS": "cmd+shift+g cmd+p"
+				"mac": "cmd+shift+g cmd+p"
 			},
 			{
-				"key": "f1",
-				"command": "workbench.action.navigateBack"
+				"command": "workbench.action.navigateBack",
+				"key": "f1"
 			},
 			{
+				"command": "workbench.action.navigateForward",
 				"key": "alt+f1",
-				"commentMacOS": "alt+f1",
-				"command": "workbench.action.navigateForward"
+				"commentMacOS": "alt+f1"
 			},
 			{
-				"key": "shift+f1",
 				"command": "editor.action.referenceSearch.trigger",
+				"key": "shift+f1",
+				"mac": "shift+f1",
 				"when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor",
 				"commend": "查找引用"
 			},
 			{
+				"command": "editor.action.revealDefinition",
 				"key": "ctrl+f1",
 				"mac": "cmd+f1",
-				"commentMacOS": "editor.action.revealDefinition",
 				"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
 			},
 			{
-				"key": "ctrl+f1",
-				"commentMacOS": "cmd+f1",
 				"command": "goToNextReference",
+				"key": "ctrl+f1",
+				"mac": "cmd+f1",
 				"when": "inReferenceSearchEditor || referenceSearchVisible"
 			},
 			{
-				"key": "ctrl+shift+oem_3",
-				"commentMacOS": "cmd+shift+oem_3",
 				"command": "workbench.action.terminal.newWithProfile",
+				"key": "ctrl+shift+oem_3",
+				"mac": "cmd+shift+oem_3",
 				"when": "terminalProcessSupported",
 				"commen": "选择工作区和 shell"
 			},
 			{
-				"key": "ctrl+shift+alt+j",
-				"commentMacOS": "cmd+shift+alt+j",
 				"command": "workbench.action.toggleMaximizedPanel",
-				"comment": "最大化面板"
+				"key": "ctrl+shift+alt+j",
+				"mac": "cmd+shift+alt+j",
+				"comment": "切换最大化面板"
 			},
 			{
-				"key": "ctrl+shift+i",
-				"commentMacOS": "cmd+shift+i",
 				"command": "editor.action.insertSnippet",
+				"key": "ctrl+alt+i",
+				"mac": "cmd+alt+i",
 				"when": "editorTextFocus || editorHasSelection",
+				"comment": "触发代码参数提示"
+			},
+			{
+				"command": "editor.action.triggerParameterHints",
+				"key": "ctrl+shift+i",
+				"mac": "cmd+shift+i",
+				"when": "editorHasSignatureHelpProvider && editorTextFocus",
 				"comment": "插入代码提示"
 			},
 			{
-				"key": "ctrl+win+oem_plus",
 				"command": "workbench.action.minimizeOtherEditors",
+				"key": "ctrl+win+oem_plus",
 				"comment": "ctrl+win+ + , 最大化编辑器组"
 			},
 			{
-				"key": "ctrl+win+oem_minus",
 				"command": "workbench.action.evenEditorWidths",
+				"key": "ctrl+win+oem_minus",
 				"comment": "ctrl+win+- ， 恢复编辑器组大小"
 			},
 			{
-				"key": "ctrl+alt+f5",
-				"commentMacOS": "cmd+alt+f5",
 				"command": "workbench.action.debug.selectandstart",
+				"key": "ctrl+alt+f5",
+				"mac": "cmd+alt+f5",
 				"comment": "选择那个去运行 debug"
 			},
 			{
-				"key": "ctrl+shift+alt+b",
-				"commentMacOS": "cmd+alt+b",
 				"command": "workbench.action.tasks.runTask",
+				"key": "ctrl+shift+alt+b",
+				"mac": "cmd+alt+b",
 				"comment": "选择那个去 build"
 			},
 			{
-				"key": "alt+f11",
 				"command": "textmarker.toggleHighlight",
+				"key": "alt+f11",
 				"when": "editorTextFocus"
+			},
+			{
+				"command": "explorer.newFile",
+				"key": "ctrl+n",
+				"mac": "cmd+n",
+				"when": "explorerViewletFocus"
+			},
+			{
+				"command": "explorer.newFolder",
+				"key": "ctrl+shift+n",
+				"mac": "cmd+shift+n",
+				"when": "explorerViewletFocus"
+			},
+			{
+				"command": "workbench.action.toggleAuxiliaryBar",
+				"key": "ctrl+alt+b",
+				"mac": "cmd+alt+b"
+			},
+			{
+				"command": "references-view.findImplementations",
+				"key": "shift+alt+f11",
+				"when": "editorFocus"
 			}
 		]
 	},
@@ -170,16 +206,20 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.50.0",
 		"@types/glob": "^7.1.4",
 		"@types/mocha": "^9.0.0",
 		"@types/node": "16.7.1",
-		"eslint": "^7.32.0",
+		"@types/vscode": "^1.50.0",
 		"@typescript-eslint/eslint-plugin": "^4.29.2",
 		"@typescript-eslint/parser": "^4.29.2",
+		"eslint": "^7.32.0",
 		"glob": "^7.1.7",
 		"mocha": "^9.1.0",
 		"typescript": "^4.3.5",
+		"vscode-nls-dev": "^4.0.0-next.1",
 		"vscode-test": "^1.6.1"
+	},
+	"dependencies": {
+		"vscode-nls": "^5.0.0"
 	}
 }
