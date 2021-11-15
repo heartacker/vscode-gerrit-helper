@@ -92,6 +92,11 @@
 				"mac": "cmd+shift+g cmd+p"
 			},
 			{
+				"command": "git-graph.view",
+				"key": "ctrl+shift+g ctrl+g",
+				"mac": "cmd+shift+g cmd+g"
+			},
+			{
 				"command": "workbench.action.navigateBack",
 				"key": "f1"
 			},
