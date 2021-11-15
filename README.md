@@ -33,7 +33,7 @@ help push to gerrit for review inside VSCode, no need to use command line shell 
 |        <kbd>Ctrl+Shift+N</kbd> | new Folder When focus on file tree   | 当聚焦到文件管理器时。创建一个新文件夹（方式和鼠标点击一致）                                                |
 |          <kbd>Ctrl+Alt+B</kbd> | Toggle side panel(request V1.62.0)   | 切换 新的侧边栏。需要VSCode 1.62.0 版本及以上                                                               |
 |       <kbd>Shift+Alt+F11</kbd> | findImplementations                  | 查找所有实现。 类似查找所有引用(Shift+Alt+F12)                                                              |
-| <kbd>Ctrl+Shift+G Ctrl+P</kbd> | open git graph(git log)              | 打开git graph（git log）视图                                                                                |
+| <kbd>Ctrl+Shift+G Ctrl+G</kbd> | open git graph(git log)              | 打开git graph（git log）视图                                                                                |
 
 - 其他
 
