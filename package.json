@@ -198,7 +198,13 @@
 			{
 				"command": "references-view.findImplementations",
 				"key": "shift+alt+f11",
+				"mac": "shift+alt+f11",
 				"when": "editorFocus"
+			},
+			{
+				"command": "outline.focus",
+				"key": "ctrl+alt+o",
+				"mac": "cmd+alt+o"
 			}
 		]
 	},
