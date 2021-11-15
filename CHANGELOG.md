@@ -10,7 +10,7 @@ None
 
 ## [Released]
 
-### [V1.0.0] 2021-11-13
+### [V0.9.1] 2021-11-15
 
 #### New
 
@@ -24,6 +24,7 @@ None
   - that is useful for you when you focus on file tree when using <kbd>Ctrl+Shift+E</kbd> explicitly.
 - add <kbd>Ctrl+Alt+B</kbd> to toggle side panel.
 - add <kbd>Shift+Alt+F11</kbd> to `references-view.findImplementations`.
+- add <kbd>Ctrl+Alt+0</kbd> to `focus on outline`.
 
 #### Change
 

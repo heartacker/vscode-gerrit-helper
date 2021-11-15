@@ -2,7 +2,7 @@
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push & Helper",
 	"description": "Gerit Push,and Helper, push to gerrit,推送当前分支到 Gerrit 的同名分支中以便评审",
-	"version": "0.9.0",
+	"version": "0.9.1",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
