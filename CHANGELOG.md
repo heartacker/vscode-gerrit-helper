@@ -10,6 +10,12 @@ None
 
 ## [Released]
 
+### [V0.9.3] 2021-11-17
+
+extract the helpful keybindings from this extension to standalone extension [VSCode Better Extend Keymap](https://marketplace.visualstudio.com/items?itemName=heartacker.better-extend-keybindings).
+
+Thanks all of you :heart:;
+
 ### [V0.9.1] 2021-11-15
 
 #### New

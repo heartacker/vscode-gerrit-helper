@@ -2,7 +2,7 @@
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push & Helper",
 	"description": "Gerit Push,and Helper, push to gerrit,推送当前分支到 Gerrit 的同名分支中以便评审",
-	"version": "0.9.1",
+	"version": "0.9.3",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -32,20 +32,22 @@
 		"gerrit",
 		"review",
 		"code review",
-		"helper"
+		"helper",
+		"推送",
+		"评审"
 	],
 	"categories": [
 		"Visualization",
 		"Other",
-		"SCM Providers",
-		"Keymaps"
+		"SCM Providers"
 	],
 	"extensionKind": [
 		"workspace",
 		"ui"
 	],
 	"extensionPack": [
-		"mhutchie.git-graph"
+		"mhutchie.git-graph",
+		"heartacker.better-extend-keybindings"
 	],
 	"extensionDependencies": [
 		"vscode.git"
@@ -82,11 +84,6 @@
 		},
 		"keybindings": [
 			{
-				"command": "workbench.view.scm",
-				"key": "ctrl+shift+g ctrl+shift+g",
-				"mac": "cmd+shift+g cmd+shift+g"
-			},
-			{
 				"command": "Gerrit.Helper.pushg",
 				"key": "ctrl+shift+g ctrl+p",
 				"mac": "cmd+shift+g cmd+p"
@@ -97,114 +94,9 @@
 				"mac": "cmd+shift+g cmd+g"
 			},
 			{
-				"command": "workbench.action.navigateBack",
-				"key": "f1"
-			},
-			{
-				"command": "workbench.action.navigateForward",
-				"key": "alt+f1",
-				"commentMacOS": "alt+f1"
-			},
-			{
-				"command": "editor.action.referenceSearch.trigger",
-				"key": "shift+f1",
-				"mac": "shift+f1",
-				"when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor",
-				"commend": "查找引用"
-			},
-			{
-				"command": "editor.action.revealDefinition",
-				"key": "ctrl+f1",
-				"mac": "cmd+f1",
-				"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-			},
-			{
-				"command": "goToNextReference",
-				"key": "ctrl+f1",
-				"mac": "cmd+f1",
-				"when": "inReferenceSearchEditor || referenceSearchVisible"
-			},
-			{
-				"command": "workbench.action.terminal.newWithProfile",
-				"key": "ctrl+shift+oem_3",
-				"mac": "cmd+shift+oem_3",
-				"when": "terminalProcessSupported",
-				"commen": "选择工作区和 shell"
-			},
-			{
-				"command": "workbench.action.toggleMaximizedPanel",
-				"key": "ctrl+shift+alt+j",
-				"mac": "cmd+shift+alt+j",
-				"comment": "切换最大化面板"
-			},
-			{
-				"command": "editor.action.insertSnippet",
-				"key": "ctrl+alt+i",
-				"mac": "cmd+alt+i",
-				"when": "editorTextFocus || editorHasSelection",
-				"comment": "触发代码参数提示"
-			},
-			{
-				"command": "editor.action.triggerParameterHints",
-				"key": "ctrl+shift+i",
-				"mac": "cmd+shift+i",
-				"when": "editorHasSignatureHelpProvider && editorTextFocus",
-				"comment": "插入代码提示"
-			},
-			{
-				"command": "workbench.action.minimizeOtherEditors",
-				"key": "ctrl+win+oem_plus",
-				"comment": "ctrl+win+ + , 最大化编辑器组"
-			},
-			{
-				"command": "workbench.action.evenEditorWidths",
-				"key": "ctrl+win+oem_minus",
-				"comment": "ctrl+win+- ， 恢复编辑器组大小"
-			},
-			{
-				"command": "workbench.action.debug.selectandstart",
-				"key": "ctrl+alt+f5",
-				"mac": "cmd+alt+f5",
-				"comment": "选择那个去运行 debug"
-			},
-			{
-				"command": "workbench.action.tasks.runTask",
-				"key": "ctrl+shift+alt+b",
-				"mac": "cmd+alt+b",
-				"comment": "选择那个去 build"
-			},
-			{
-				"command": "textmarker.toggleHighlight",
-				"key": "alt+f11",
-				"when": "editorTextFocus"
-			},
-			{
-				"command": "explorer.newFile",
-				"key": "ctrl+n",
-				"mac": "cmd+n",
-				"when": "explorerViewletFocus"
-			},
-			{
-				"command": "explorer.newFolder",
-				"key": "ctrl+shift+n",
-				"mac": "cmd+shift+n",
-				"when": "explorerViewletFocus"
-			},
-			{
-				"command": "workbench.action.toggleAuxiliaryBar",
-				"key": "ctrl+alt+b",
-				"mac": "cmd+alt+b"
-			},
-			{
-				"command": "references-view.findImplementations",
-				"key": "shift+alt+f11",
-				"mac": "shift+alt+f11",
-				"when": "editorFocus"
-			},
-			{
-				"command": "outline.focus",
-				"key": "ctrl+alt+o",
-				"mac": "cmd+alt+o"
+				"command": "workbench.view.scm",
+				"key": "ctrl+shift+g ctrl+shift+g",
+				"mac": "cmd+shift+g cmd+shift+g"
 			}
 		]
 	},
