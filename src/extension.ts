@@ -80,7 +80,7 @@ async function pushCommit(repo: Repository, remoteName: string, branchName: stri
 				});
 			if (!ret) {
 				vscode.window.showInformationMessage(
-					localize('gerrit.exec.push.success', "GerritHelper: push branch sucess, check in [Git] output log!")
+					localize('gerrit.exec.push.success', "GerritHelper: push branch success, check in [Git] output log!")
 				);
 			}
 			vscode.commands.executeCommand('git.showOutput');
