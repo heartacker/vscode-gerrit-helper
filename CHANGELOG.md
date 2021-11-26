@@ -10,6 +10,12 @@ None
 
 ## [Released]
 
+### [V0.9.4] 2021/11/26
+
+- change the shout cut from <kbd>Ctrl+Shift+G Ctrl+P</kbd> to <kbd>Ctrl+Shift+G Ctrl+Shift+P</kbd>
+- add the shout cut <kbd>Ctrl+Shift+G Ctrl+S</kbd> for `git.sync`
+- add the shout cut <kbd>Ctrl+Shift+G Ctrl+F</kbd> for `git.fetch`
+
 ### [V0.9.3] 2021-11-17
 
 extract the helpful keybindings from this extension to standalone extension [VSCode Better Extend Keymap](https://marketplace.visualstudio.com/items?itemName=heartacker.better-extend-keybindings).

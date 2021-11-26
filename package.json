@@ -2,7 +2,7 @@
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push & Helper",
 	"description": "Gerit Push,and Helper, push to gerrit,推送当前分支到 Gerrit 的同名分支中以便评审",
-	"version": "0.9.3",
+	"version": "0.9.4",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -19,6 +19,7 @@
 		"url": "https://github.com/heartacker/vscode-gerrit-helper/issues",
 		"email": "heartacker@outlook.com"
 	},
+	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/heartacker/vscode-gerrit-helper.git"
@@ -79,14 +80,24 @@
 					"when": "scmProvider == git",
 					"command": "Gerrit.Helper.pushg",
 					"group": "navigation"
+				},
+				{
+					"when": "scmProvider == git",
+					"command": "git.fetch",
+					"group": "1_header@5"
 				}
 			]
 		},
 		"keybindings": [
 			{
+				"command": "workbench.view.scm",
+				"key": "ctrl+shift+g ctrl+shift+g",
+				"mac": "cmd+shift+g cmd+shift+g"
+			},
+			{
 				"command": "Gerrit.Helper.pushg",
-				"key": "ctrl+shift+g ctrl+p",
-				"mac": "cmd+shift+g cmd+p"
+				"key": "ctrl+shift+g ctrl+shift+p",
+				"mac": "cmd+shift+g cmd+shift+p"
 			},
 			{
 				"command": "git-graph.view",
@@ -94,9 +105,14 @@
 				"mac": "cmd+shift+g cmd+g"
 			},
 			{
-				"command": "workbench.view.scm",
-				"key": "ctrl+shift+g ctrl+shift+g",
-				"mac": "cmd+shift+g cmd+shift+g"
+				"command": "git.sync",
+				"key": "ctrl+shift+g ctrl+s",
+				"mac": "cmd+shift+g cmd+s"
+			},
+			{
+				"command": "git.fetch",
+				"key": "ctrl+shift+g ctrl+f",
+				"mac": "cmd+shift+g cmd+f"
 			}
 		]
 	},
