@@ -10,6 +10,10 @@ None
 
 ## [Released]
 
+### [V0.9.5] 2022/01/15
+
+- remove keybinding extension
+
 ### [V0.9.4] 2021/11/26
 
 - change the shout cut from <kbd>Ctrl+Shift+G Ctrl+P</kbd> to <kbd>Ctrl+Shift+G Ctrl+Shift+P</kbd>
