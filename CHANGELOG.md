@@ -10,6 +10,11 @@ None
 
 ## [Released]
 
+### [V0.10.0] 2022/05/06
+
+- remove the git fetch command from git menu in favor of [PR #137940](https://github.com/microsoft/vscode/pull/137940)
+- change shortcut binding
+
 ### [V0.9.5] 2022/01/15
 
 - remove keybinding extension

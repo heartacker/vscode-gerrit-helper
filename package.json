@@ -2,7 +2,7 @@
 	"name": "vscode-gerrit-helper",
 	"displayName": "Gerrit Push & Helper",
 	"description": "Gerit Push,and Helper, push to gerrit,推送当前分支到 Gerrit 的同名分支中以便评审",
-	"version": "0.9.5",
+	"version": "0.10.0",
 	"publisher": "Heartacker",
 	"author": {
 		"name": "heartacker",
@@ -13,7 +13,7 @@
 	"readme": "README.md",
 	"preview": true,
 	"engines": {
-		"vscode": "^1.50.0"
+		"vscode": "^1.67.0"
 	},
 	"bugs": {
 		"url": "https://github.com/heartacker/vscode-gerrit-helper/issues",
@@ -79,11 +79,6 @@
 					"when": "scmProvider == git",
 					"command": "Gerrit.Helper.pushg",
 					"group": "navigation"
-				},
-				{
-					"when": "scmProvider == git",
-					"command": "git.fetch",
-					"group": "1_header@5"
 				}
 			]
 		},
@@ -105,11 +100,11 @@
 			},
 			{
 				"command": "git.sync",
-				"key": "ctrl+shift+g ctrl+s",
-				"mac": "cmd+shift+g cmd+s"
+				"key": "ctrl+shift+g alt+s",
+				"mac": "cmd+shift+g alt+s"
 			},
 			{
-				"command": "git.fetch",
+				"command": "git.fetchAll",
 				"key": "ctrl+shift+g ctrl+f",
 				"mac": "cmd+shift+g cmd+f"
 			}
