@@ -6,6 +6,7 @@ const localize = nls.loadMessageBundle();
 import path = require('path');
 import * as vscode from 'vscode';
 import { Git, GitExtension, Repository } from "./api/git";
+import { Uri } from 'vscode';
 
 
 // =======acommit====================================
@@ -96,7 +97,7 @@ async function pushCommit(repo: Repository, remoteName: string, branchName: stri
 
 //push 相关的处理
 // 如果是当前仓库。
-async function mainPushG(uri: any) {
+async function mainPushG(repo?: Repository | Uri): Promise<void> {
 
 	// check git extension is installed
 	const cgit = getGitExtension();
@@ -106,23 +107,24 @@ async function mainPushG(uri: any) {
 		return;
 	}
 
-	console.log(uri);
-	if (uri) {
+	console.log(repo);
+	if (repo instanceof Uri) {
 
+	} else if (repo !== undefined) {
 		let selectedRepository = cgit.repositories.find(
 			(rp) => {
-				return rp.rootUri.path === uri._rootUri.path;
+				return rp.rootUri.path === repo.rootUri.path;
 			}
 		);
 		if (selectedRepository) {
-			return pushg(selectedRepository, uri);
+			return pushg(selectedRepository, repo);
 		}
 		else {
 			vscode.window.showErrorMessage("请在仓库分支执行推送动作！");
 			return;
 		}
 	} else {
-		return selectingPush(uri);
+		return selectingPush(repo);
 	}
 }
 
